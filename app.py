@@ -104,7 +104,6 @@ EmpowerHER is a Streamlit web app that uses an XGBoost model trained on the Bres
 - **Brier Score**: The average squared difference between predicted probabilities and actual outcomes. Lower scores (closer to 0) indicate that probability estimates are more accurate.
 
 """)
-    )
     st.header("Current US Breast Cancer Statistics in 2025 from American Cancer Society")
     # Using static values only to avoid PDF parsing complexity
     new_cases, deaths, incidence = "317,000", "42,680", "130.8 per 100,000"
