@@ -112,17 +112,13 @@ EmpowerHER is a Streamlit web app that uses an XGBoost model trained on the Bres
     st.write(f"**Age-adjusted incidence rate:** {incidence}")
 
 
-    # Arrange visual summaries in four columns
-    st.subheader("Key Visual Summaries")
-    cols = st.columns(4)
-    visuals = {
-        "Prediction Flow": "figures/flowchart.png",
-        "Feature Importances": "models/feature_importance.png",
-        "Precision–Recall Curve": "models/pr_curve.png",
-        "Calibration Curve": "models/calibration_curve.png"
-    }
-    for col, (caption, img_path) in zip(cols, visuals.items()):
-        col.image(img_path, caption=caption, use_column_width=True)
+    # Arrange visual summaries 
+   st.image("figures/empowerher_risk_pipeline_clean.png", width=900)
+    st.markdown("Users can select demographic and clinical data to see the model risk prediction.")
+    st.image("figures/feature_importance_xgb.png", width=900)
+    st.markdown("This plot shows the top predictors the model relies on.")
+    st.image("figures/P-R chart2.png", width=900)
+    st.markdown("Precision–Recall curve for this XGBoost classifier model.")
 
 # Tab 2: Risk Insights 
 with tab2:
