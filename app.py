@@ -123,7 +123,7 @@ When you hear things like"overall accuracy", “precision” or “70% recall,�
         img_full_path = BASE_DIR / img_path
         try:
             img = Image.open(img_full_path)
-            st.image(img, caption=caption, width=700)
+            st.image(img, caption=caption, width=500)
         except Exception:
             st.error(f"Unable to load image: {img_full_path}")
 
