@@ -112,23 +112,30 @@ When you hear things like"overall accuracy", “precision” or “70% recall,�
     st.metric("Estimated Breast cancer deaths (2025)", deaths)
     st.write(f"**Age-adjusted incidence rate:** {incidence}")
     st.subheader("Key Visual Summaries")
-    cols = st.columns(4)
     visuals = {
-        "Prediction Flow": "figures/empowerher_risk_pipeline_clean.png",
-        "Confusion matrix chart": "figures/confusion_matrix.png",
+        "Prediction Flow": "figures/flowchart.png",
+        "Feature Importances": "figures/confusion_matrix.png",
         "Precision–Recall Curve": "figures/pr_curve.png",
         "Calibration Curve": "figures/calibration_curve.png"
     }
-    for col, (caption, img_path) in zip(cols, visuals.items()):
-        # Build full path using BASE_DIR
-        img_full_path = BASE_DIR / img_path
-        try:
-            # Open image explicitly to avoid MediaFileStorageError
-            from PIL import Image
-            img = Image.open(img_full_path)
-            col.image(img, caption=caption, use_column_width=True)
-        except Exception:
-            col.error(f"Unable to load image: {img_full_path}")
+    # Display first chart full-width
+first_caption, first_img_path = list(visuals.items())[0]
+try:
+    from PIL import Image
+    first_img = Image.open(BASE_DIR / first_img_path)
+    st.image(first_img, caption=first_caption, use_column_width=True)
+except Exception:
+    st.error(f"Unable to load image: {BASE_DIR / first_img_path}")
+
+# Display remaining three charts side-by-side
+other_items = list(visuals.items())[1:]
+cols = st.columns(3)
+for col, (caption, img_path) in zip(cols, other_items):
+    try:
+        img = Image.open(BASE_DIR / img_path)
+        col.image(img, caption=caption, use_column_width=True)
+    except Exception:
+        col.error(f"Unable to load image: {BASE_DIR / img_path}")
 
   
 
