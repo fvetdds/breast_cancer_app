@@ -98,8 +98,9 @@ with tab1:
 EmpowerHER is a Streamlit web app that uses an XGBoost model trained on the Brest Cancer Surveillance Consortium **BCSC** cohort https://www.bcsc-research.org/index.php/datasets/rf/ to deliver personalized breast cancer risk predictions—combining your demographic and clinical inputs into an easy-to-understand probability score and actionable guidance.Predictions may be less reliable for populations under-represented e.g. certain ethnic groups.
     st.
 ***How we evaluate model performance
-70When you hear things like “ precision” or “70% recall,” it can feel like jargon. Here’s what those numbers really mean and why we chose them, what they tell us about the model, and why they matter for you.
-**Precision**: Of all cases the model flagged as cancer case, the percentage that actually developed cancer. A 59% precision means 59 out of every 100 flagged cases were true positives.
+When you hear things like"overall accuracy", “precision” or “70% recall,” it can feel like jargon. Here’s what those numbers really mean and why we chose them, what they tell us about the model, and why they matter for you.
+- **Overall accuracy**:the overall accuracy is 0.879 (about 88 %), meaning 88 out of every 100 predictions, cancer or not, were correct. 
+- **Precision**: Of all cases the model flagged as cancer case, the percentage that actually developed cancer. A 59% precision means 59 out of every 100 flagged cases were true positives.
 - **Recall (Sensitivity)**: Of all true cancer cases, the percentage the model correctly identified. A 52% recall means the model detected 52 out of every 100 real cases.
 - **Brier Score**: The average squared difference between predicted probabilities and actual outcomes. Lower scores (closer to 0) indicate that probability estimates are more accurate.
 
@@ -113,9 +114,10 @@ EmpowerHER is a Streamlit web app that uses an XGBoost model trained on the Bres
 
 
     # Arrange visual summaries 
-   st.image("figures/empowerher_risk_pipeline_clean.png", width=900)
+    st.subheader("Key Visual Summaries")
+    st.image("figures/empowerher_risk_pipeline_clean.png", width=900)
     st.markdown("Users can select demographic and clinical data to see the model risk prediction.")
-    st.image("figures/feature_importance_xgb.png", width=900)
+    st.image("confusin_matrix.png", width=900)
     st.markdown("This plot shows the top predictors the model relies on.")
     st.image("figures/P-R chart2.png", width=900)
     st.markdown("Precision–Recall curve for this XGBoost classifier model.")
