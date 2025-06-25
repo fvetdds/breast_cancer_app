@@ -93,16 +93,15 @@ threshold = joblib.load(BASE_DIR / "models" / "threshold.pkl")
 # Tab 1: About 
 with tab1:
     
-    st.info(Research & Education use only: This tool is not a medical diagnosis.)
-    st.markdown("""
+    st.info("Research & Education use only: This tool is not a medical diagnosis.")
+    st.markdown("""*** About EmpowerHER***
 EmpowerHER is a Streamlit web app that uses an XGBoost model trained on the Brest Cancer Surveillance Consortium **BCSC** cohort https://www.bcsc-research.org/index.php/datasets/rf/ to deliver personalized breast cancer risk predictions—combining your demographic and clinical inputs into an easy-to-understand probability score and actionable guidance.Predictions may be less reliable for populations under-represented e.g. certain ethnic groups.
     st.
-***How we know this breast cancer risk model is any good***
-When you hear things like “89% accuracy” or “52% recall,” it can feel like jargon. Here’s what those numbers really mean and why we chose them, what they tell us about the model, and why they matter for you.
-***Overall Accuracy***
-Think of accuracy like a simple “right vs. wrong” score. If the model makes 100 predictions about who might develop breast cancer and who won’t—and 89 of those guesses match reality—that’s 89% accuracy.
-***Recall***: Catching the real cases
-If 100 women truly had early‐stage cancer and our model flagged 52 of them, recall is 52%.
+***How we evaluate model performance
+70When you hear things like “ precision” or “70% recall,” it can feel like jargon. Here’s what those numbers really mean and why we chose them, what they tell us about the model, and why they matter for you.
+**Precision**: Of all cases the model flagged as cancer case, the percentage that actually developed cancer. A 59% precision means 59 out of every 100 flagged cases were true positives.
+- **Recall (Sensitivity)**: Of all true cancer cases, the percentage the model correctly identified. A 52% recall means the model detected 52 out of every 100 real cases.
+- **Brier Score**: The average squared difference between predicted probabilities and actual outcomes. Lower scores (closer to 0) indicate that probability estimates are more accurate.
 
 """)
     st.image("figures/empowerher_risk_pipeline_clean.png", width=900)
