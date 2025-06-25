@@ -25,16 +25,33 @@ st.markdown(
     <style>
     /* Container adapts to screen width */
     .block-container {
-      width: 90%;
-      max-width: 1200px;
+      width: 70%;
+      max-width: 900px;
       margin: auto;
       padding: 1rem;
     }
-    /* Smaller padding on very small screens */
+    /* Full width on small screens */
     @media (max-width: 600px) {
       .block-container {
         width: 100%;
         padding: 0.75rem;
+      }
+    }
+    /* Slightly narrower on medium screens */
+    @media (max-width: 1024px) and (min-width: 601px) {
+      .block-container {
+        width: 90%;
+        padding: 1rem;
+      }
+    }
+    </style>
+    ''',
+    unsafe_allow_html=True
+)
+ {
+      .block-container {
+        width: 100%;
+        padding: 0.5rem;
       }
     }
     </style>
