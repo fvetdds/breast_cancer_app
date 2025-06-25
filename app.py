@@ -118,26 +118,14 @@ When you hear things like"overall accuracy", “precision” or “70% recall,�
         "Precision–Recall Curve": "figures/pr_curve.png",
         "Calibration Curve": "figures/calibration_curve.png"
     }
-    # Display first chart full-width
-first_caption, first_img_path = list(visuals.items())[0]
-try:
     from PIL import Image
-    first_img = Image.open(BASE_DIR / first_img_path)
-    st.image(first_img, caption=first_caption, use_column_width=True)
-except Exception:
-    st.error(f"Unable to load image: {BASE_DIR / first_img_path}")
-
-# Display remaining three charts side-by-side
-other_items = list(visuals.items())[1:]
-cols = st.columns(3)
-for col, (caption, img_path) in zip(cols, other_items):
-    try:
-        img = Image.open(BASE_DIR / img_path)
-        col.image(img, caption=caption, use_column_width=True)
-    except Exception:
-        col.error(f"Unable to load image: {BASE_DIR / img_path}")
-
-  
+    for caption, img_path in visuals.items():
+        img_full_path = BASE_DIR / img_path
+        try:
+            img = Image.open(img_full_path)
+            st.image(img, caption=caption, use_column_width=True)
+        except Exception:
+            st.error(f"Unable to load image: {img_full_path}")
 
 # Tab 2: Risk Insights 
 with tab2:
