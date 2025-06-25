@@ -26,7 +26,7 @@ st.markdown(
     /* Container adapts to screen width */
     .block-container {
       width: 90%;
-      max-width: 800px;
+      max-width: 1200px;
       margin: auto;
       padding: 1rem;
     }
@@ -34,7 +34,7 @@ st.markdown(
     @media (max-width: 600px) {
       .block-container {
         width: 100%;
-        padding: 0.5rem;
+        padding: 0.75rem;
       }
     }
     </style>
