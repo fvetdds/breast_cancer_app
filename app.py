@@ -113,7 +113,7 @@ When you hear things like"overall accuracy", “precision” or “70% recall,�
     st.write(f"**Age-adjusted incidence rate:** {incidence}")
     st.subheader("Key Visual Summaries")
     visuals = {
-        "Prediction Flow": "figures/flowchart.png",
+        "Prediction Flow": "figures/empowerher_risk_pipeline_clean.png",
         "Feature Importances": "figures/confusion_matrix.png",
         "Precision–Recall Curve": "figures/pr_curve.png",
         "Calibration Curve": "figures/calibration_curve.png"
@@ -123,7 +123,7 @@ When you hear things like"overall accuracy", “precision” or “70% recall,�
         img_full_path = BASE_DIR / img_path
         try:
             img = Image.open(img_full_path)
-            st.image(img, caption=caption, use_column_width=True)
+            st.image(img, caption=caption, width=700)
         except Exception:
             st.error(f"Unable to load image: {img_full_path}")
 
