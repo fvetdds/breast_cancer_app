@@ -111,18 +111,26 @@ When you hear things like"overall accuracy", “precision” or “70% recall,�
     st.metric("Estimated New invasive cases (2025)", new_cases)
     st.metric("Estimated Breast cancer deaths (2025)", deaths)
     st.write(f"**Age-adjusted incidence rate:** {incidence}")
-
-
-    # Arrange visual summaries 
     st.subheader("Key Visual Summaries")
-    st.image("figures/empowerher_risk_pipeline_clean.png", width=900)
-    st.markdown("Users can select demographic and clinical data to see the model risk prediction.")
-    st.image("figures/confusion_matrix.png", width=900)
-    st.markdown("This plot shows the top predictors the model relies on.")
-    st.image("figures/P-R chart2.png", width=900)
-    st.markdown("Precision–Recall curve for this XGBoost classifier model.")
-    st.image("figures/calibration_curve.png", width=900)
-    st.markdown("Precision–Recall curve for this XGBoost classifier model.")
+    cols = st.columns(4)
+    visuals = {
+        "Prediction Flow": "figures/flowchart.png",
+        "Feature Importances": "figures/confusion_matrix.png",
+        "Precision–Recall Curve": "figures/pr_curve.png",
+        "Calibration Curve": "figures/calibration_curve.png"
+    }
+    for col, (caption, img_path) in zip(cols, visuals.items()):
+        # Build full path using BASE_DIR
+        img_full_path = BASE_DIR / img_path
+        try:
+            # Open image explicitly to avoid MediaFileStorageError
+            from PIL import Image
+            img = Image.open(img_full_path)
+            col.image(img, caption=caption, use_column_width=True)
+        except Exception:
+            col.error(f"Unable to load image: {img_full_path}")
+
+  
 
 # Tab 2: Risk Insights 
 with tab2:
