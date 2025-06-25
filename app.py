@@ -114,8 +114,8 @@ When you hear things like"overall accuracy", “precision” or “70% recall,�
     st.subheader("Key Visual Summaries")
     cols = st.columns(4)
     visuals = {
-        "Prediction Flow": "figures/flowchart.png",
-        "Feature Importances": "figures/confusion_matrix.png",
+        "Prediction Flow": "figures/empowerher_risk_pipeline_clean.png",
+        "Confusion matrix chart": "figures/confusion_matrix.png",
         "Precision–Recall Curve": "figures/pr_curve.png",
         "Calibration Curve": "figures/calibration_curve.png"
     }
