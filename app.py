@@ -48,16 +48,7 @@ st.markdown(
     ''',
     unsafe_allow_html=True
 )
-     {
-      .block-container {
-        width: 100%;
-        padding: 0.5rem;
-      }
-    }
-    </style>
-    ''',
-    unsafe_allow_html=True
-)
+
 def img_to_base64(img_path):
     with open(img_path, "rb") as f:
         data = f.read()
