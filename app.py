@@ -93,7 +93,7 @@ threshold = joblib.load(BASE_DIR / "models" / "threshold.pkl")
 # Tab 1: About 
 with tab1:
     
-    st.info(***Research & Education use only:** This tool is not a medical diagnosis.)
+    st.info(Research & Education use only: This tool is not a medical diagnosis.)
     st.markdown("""
 EmpowerHER is a Streamlit web app that uses an XGBoost model trained on the Brest Cancer Surveillance Consortium **BCSC** cohort https://www.bcsc-research.org/index.php/datasets/rf/ to deliver personalized breast cancer risk predictions—combining your demographic and clinical inputs into an easy-to-understand probability score and actionable guidance.Predictions may be less reliable for populations under-represented e.g. certain ethnic groups.
     st.
