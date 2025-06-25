@@ -19,8 +19,28 @@ mod.weighted_logloss = weighted_logloss
 sys.modules["model_train"] = mod
 
 # Streamlit page setup
-st.set_page_config(page_title="EmpowerHER: Know Your Risks. Lead Your Life. ", layout="wide")
-
+st.set_page_config(page_title="EmpowerHER: Know Your Risks. Lead Your Life. ", layout="centered")
+st.markdown(
+    '''
+    <style>
+    /* Container adapts to screen width */
+    .block-container {
+      width: 90%;
+      max-width: 800px;
+      margin: auto;
+      padding: 1rem;
+    }
+    /* Smaller padding on very small screens */
+    @media (max-width: 600px) {
+      .block-container {
+        width: 100%;
+        padding: 0.5rem;
+      }
+    }
+    </style>
+    ''',
+    unsafe_allow_html=True
+)
 def img_to_base64(img_path):
     with open(img_path, "rb") as f:
         data = f.read()
