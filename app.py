@@ -117,9 +117,11 @@ When you hear things like"overall accuracy", “precision” or “70% recall,�
     st.subheader("Key Visual Summaries")
     st.image("figures/empowerher_risk_pipeline_clean.png", width=900)
     st.markdown("Users can select demographic and clinical data to see the model risk prediction.")
-    st.image("confusin_matrix.png", width=900)
+    st.image("figures/confusion_matrix.png", width=900)
     st.markdown("This plot shows the top predictors the model relies on.")
     st.image("figures/P-R chart2.png", width=900)
+    st.markdown("Precision–Recall curve for this XGBoost classifier model.")
+    st.image("figures/calibration_curve.png", width=900)
     st.markdown("Precision–Recall curve for this XGBoost classifier model.")
 
 # Tab 2: Risk Insights 
