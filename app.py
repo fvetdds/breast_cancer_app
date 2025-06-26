@@ -186,37 +186,34 @@ When you hear things like"overall accuracy", “precision” or “70% recall,�
 - **Brier Score**: The average squared difference between predicted probabilities and actual outcomes. Lower scores (closer to 0) indicate that probability estimates are more accurate. The model has Brier score = 0.1012.
 
 """)
+# US statistics
     st.subheader("Current US Breast Cancer Statistics in 2025 from American Cancer Society")
-    
-    new_cases, deaths, incidence = "317,000", "42,680", "130.8 new cases per 100,000 women"
+    new_cases = "317,000"
+    deaths = "42,680"
+    incidence = "130.8 new cases per 100,000 women"
+
     st.metric("Estimated New invasive cases (2025)", new_cases)
     st.metric("Estimated Breast cancer deaths (2025)", deaths)
     st.metric("Age-adjusted incidence rate (females) (2025)", incidence)
 
-from PIL import Image
+    # Key visuals
     st.subheader("Key Visual Summaries")
     visuals = {
-     "Prediction Work Flow":      "figures/empowerher_risk_pipeline_clean.png",
-     "Confusion Matrix chart":    "figures/confusion_matrix.png",
-     "Precision–Recall Curve":    "figures/pr_curve.png",
-     "Calibration Curve":         "figures/calibration_curve.png"
+        "Prediction Work Flow":      "figures/empowerher_risk_pipeline_clean.png",
+        "Confusion Matrix chart":    "figures/confusion_matrix.png",
+        "Precision–Recall Curve":    "figures/pr_curve.png",
+        "Calibration Curve":         "figures/calibration_curve.png"
     }
 
-
-    items = list(visuals.items())
-
-
-    first_caption, first_rel = items[0]
-    first_img = Image.open(BASE_DIR / first_rel)
-    st.image(first_img, caption=first_caption, width=700)
-
-
-    for caption, rel in items[1:]:
+    # Display images
+    for caption, rel_path in visuals.items():
+        img_path = BASE_DIR / rel_path
         try:
-            img = Image.open(BASE_DIR / rel)
-            st.image(img, caption=caption, width=500)
+            img = Image.open(img_path)
+            width = 700 if caption == "Prediction Work Flow" else 500
+            st.image(img, caption=caption, width=width)
         except FileNotFoundError:
-            st.error(f"Unable to load image: {BASE_DIR / rel}")
+            st.error(f"Unable to load image: {img_path}")
 
 # Tab 2: Risk Insights 
 with tab2:
