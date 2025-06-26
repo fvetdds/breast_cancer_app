@@ -144,24 +144,17 @@ with tab1:
     <div style="text-align:left; margin: 20px 0;">
       <h1 style="
         display: inline-block;
-        padding: 4px 10px;
+        padding: 5px 10px;
         margin: 0;
         color: #FFFFFF !important; 
         font-family: 'Montserrat', sans-serif;
-        font-size: 1.0rem;
-        border-radius: 5px;
-        background: linear-gradient(135deg, #7C3AED, #EC4899);
+        font-size: 1.5rem;
+        border-radius: 6px;
+        background: linear-gradient(135deg, #9F6EF4, #F38EB5);
       ">
         ✨ About EmpowerHER ✨
       </h1>
-    </div>
-    <hr style="
-      border: none;
-      height: 1px;
-      background: #ddd;
-      margin-bottom: 20px;
-      width: 30%;
-    ">
+    
     """,
     unsafe_allow_html=True
 )
@@ -172,25 +165,17 @@ EmpowerHER is a Streamlit web app that uses an XGBoost model trained on the Brea
     <div style="text-align:left; margin: 20px 0;">
       <h1 style="
         display: inline-block;
-        padding: 4px 10px;
+        padding: 5px 10px;
         margin: 0;
         color: #FFFFFF !important; 
         font-family: 'Montserrat', sans-serif;
-        font-size: 1.0rem;
+        font-size: 1.5rem;
         border-radius: 5px;
-        background: linear-gradient(135deg, #7C3AED, #EC4899);
+        background: linear-gradient(135deg, #9F6EF4, #F38EB5);
       ">
         How we evaluate model performance
       </h1>
-    </div>
-    <hr style="
-      border: none;
-      height: 1px;
-      background: #ddd;
-      margin-bottom: 30px;
-      width: 40%;
-    ">
-    """,
+   """,
     unsafe_allow_html=True
 )
     st.markdown("""
