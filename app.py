@@ -192,21 +192,33 @@ When you hear things like"overall accuracy", “precision” or “70% recall,�
     st.metric("Estimated New invasive cases (2025)", new_cases)
     st.metric("Estimated Breast cancer deaths (2025)", deaths)
     st.metric("Age-adjusted incidence rate (females) (2025)", incidence)
-    st.subheader("Key Visual Summaries")
-    visuals = {
-        "Prediction Work Flow": "figures/empowerher_risk_pipeline_clean.png",
-        "Confusion Matrix chart": "figures/confusion_matrix.png",
-        "Precision–Recall Curve": "figures/pr_curve.png",
-        "Calibration Curve": "figures/calibration_curve.png"
-    }
-    from PIL import Image
-    for caption, img_path in visuals.items():
-        img_full_path = BASE_DIR / img_path
-        try:
-            img = Image.open(img_full_path)
-            st.image(img, caption=caption, width=500)
-        except Exception:
-            st.error(f"Unable to load image: {img_full_path}")
+
+from PIL import Image
+
+st.subheader("Key Visual Summaries")
+
+visuals = {
+    "Prediction Work Flow":      "figures/empowerher_risk_pipeline_clean.png",
+    "Confusion Matrix chart":    "figures/confusion_matrix.png",
+    "Precision–Recall Curve":    "figures/pr_curve.png",
+    "Calibration Curve":         "figures/calibration_curve.png"
+}
+
+
+items = list(visuals.items())
+
+
+first_caption, first_rel = items[0]
+first_img = Image.open(BASE_DIR / first_rel)
+st.image(first_img, caption=first_caption, width=700)
+
+
+for caption, rel in items[1:]:
+    try:
+        img = Image.open(BASE_DIR / rel)
+        st.image(img, caption=caption, width=500)
+    except FileNotFoundError:
+        st.error(f"Unable to load image: {BASE_DIR / rel}")
 
 # Tab 2: Risk Insights 
 with tab2:
