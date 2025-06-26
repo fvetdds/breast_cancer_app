@@ -208,7 +208,7 @@ When you hear things like"overall accuracy", “precision” or “70% recall,�
     st.metric("Estimated Breast cancer deaths (2025)", deaths)
     st.markdown(
         f"<p class='incidence-rate'>Age-adjusted incidence rates: {incidence}</p>",
-        unsafe_allow_html=True)
+        unsafe_allow_html=True,)
     st.subheader("Key Visual Summaries")
     visuals = {
         "Prediction Work Flow": "figures/empowerher_risk_pipeline_clean.png",
