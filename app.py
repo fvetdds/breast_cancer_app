@@ -180,7 +180,6 @@ EmpowerHER is a Streamlit web app that uses an XGBoost model trained on the Brea
         border-radius: 5px;
         background: linear-gradient(135deg, #7C3AED, #EC4899);
       ">
-      ">
         How we evaluate model performance
       </h1>
     </div>
@@ -198,18 +197,16 @@ EmpowerHER is a Streamlit web app that uses an XGBoost model trained on the Brea
 When you hear things like"overall accuracy", “precision” or “70% recall,” it can feel like jargon. Here’s what those numbers really mean and why we chose them, what they tell us about the model, and why they matter for you.
 - **Overall accuracy**:the overall accuracy is 0.879 (about 88 %), meaning 88 out of every 100 predictions, cancer or not, were correct. 
 - **Precision**: Of all cases which the model flagged as cancer case, the percentage that actually developed cancer. A 59% precision means 59 out of every 100 flagged cases were true positives.
-- **Recall (Sensitivity)**: Of all true cancer cases, the percentage the model correctly identified. A 52% recall means the model detected 52 out of every 100 real cases.
+- **Recall (Sensitivity)**: Of all true cancer cases, the percentage the model correctly identified. A 70% recall means the model detected 70 out of every 100 real cases.
 - **Brier Score**: The average squared difference between predicted probabilities and actual outcomes. Lower scores (closer to 0) indicate that probability estimates are more accurate.
 
 """)
     st.header("Current US Breast Cancer Statistics in 2025 from American Cancer Society")
-    # Using static values only to avoid PDF parsing complexity
+    
     new_cases, deaths, incidence = "317,000", "42,680", "130.8 per 100,000"
     st.metric("Estimated New invasive cases (2025)", new_cases)
     st.metric("Estimated Breast cancer deaths (2025)", deaths)
-    st.markdown(
-        f"<p class='incidence-rate'>Age-adjusted incidence rates: {incidence}</p>",
-        unsafe_allow_html=True,)
+    st.metric("Breast Cancer Incidence (2025)", incidence)
     st.subheader("Key Visual Summaries")
     visuals = {
         "Prediction Work Flow": "figures/empowerher_risk_pipeline_clean.png",
