@@ -25,7 +25,7 @@ st.markdown(
     <style>
     /* Container adapts to screen width */
     .block-container {
-      width: 70%;
+      width: 100%;
       max-width: 900px;
       margin: auto;
       padding: 1rem;
@@ -116,11 +116,11 @@ st.markdown(
          Incidence-rate: bump up size & use accent color
          -------------------------------------------------- */
       .incidence-rate {
-        font-size: 2.5rem;           /* ← tweak this */
+        font-size: 2.5rem;          
         font-weight: 600;
         margin: 1rem 0;
-        color: #2A9D8F !important;   /* your EmpowerHER accent */
-        text-align: center;          /* center if you like */
+        color: #2A9D8F !important;  
+        text-align: center;          
       }
     </style>
     """,
@@ -128,7 +128,7 @@ st.markdown(
 )
 
 # Main tabs
-tab1, tab2, tab3 = st.tabs(["About", "Breast Cancer Risk Prediction", "Mind & Move"])
+tab1, tab2, tab3 = st.tabs(["About EmpowerHER", "Breast Cancer Risk Prediction", "Mind & Move"])
 
 # Load pre-trained model and threshold
 BASE_DIR = Path(__file__).resolve().parent
@@ -141,14 +141,15 @@ with tab1:
     st.info("Research & Education use only: This tool is not a medical diagnosis.")
     st.markdown(
     """
-    <div style="text-align:center; margin: 20px 0;">
+    <div style="text-align:left; margin: 20px 0;">
       <h1 style="
         display: inline-block;
-        padding: 10px 20px;
+        padding: 6px 12px;
         margin: 0;
-        color: #2A9D8F; /* your EmpowerHER accent */
+        color: #2A9D8F; 
         font-family: 'Montserrat', sans-serif;
-        border-radius: 8px;
+        font-size: 1.5rem;
+        border-radius: 6px;
         background: rgba(42, 157, 143, 0.1);
       ">
         ✨ About EmpowerHER ✨
@@ -158,8 +159,8 @@ with tab1:
       border: none;
       height: 1px;
       background: #ddd;
-      margin-bottom: 30px;
-      width: 40%;
+      margin-bottom: 20px;
+      width: 30%;
     ">
     """,
     unsafe_allow_html=True
@@ -168,14 +169,15 @@ with tab1:
 EmpowerHER is a Streamlit web app that uses an XGBoost model trained on the Breast Cancer Surveillance Consortium **BCSC** cohort https://www.bcsc-research.org/index.php/datasets/rf/ to deliver personalized breast cancer risk predictions—combining your demographic and clinical inputs into an easy-to-understand probability score and actionable guidance. Predictions may be less reliable for populations under-represented e.g. certain ethnic groups.""")
     st.markdown(
     """
-    <div style="text-align:center; margin: 20px 0;">
+    <div style="text-align:left; margin: 20px 0;">
       <h1 style="
         display: inline-block;
-        padding: 10px 20px;
+        padding: 6px 12px;
         margin: 0;
         color: #2A9D8F;
         font-family: 'Montserrat', sans-serif;
-        border-radius: 8px;
+        font-size: 1.5rem;
+        border-radius: 6px;
         background: rgba(42, 157, 143, 0.1);
       ">
         How we evaluate model performance
@@ -206,7 +208,7 @@ When you hear things like"overall accuracy", “precision” or “70% recall,�
     st.metric("Estimated Breast cancer deaths (2025)", deaths)
     st.markdown(
         f"<p class='incidence-rate'>Age-adjusted incidence rates: {incidence}</p>",
-        unsafe_allow_html=true)
+        unsafe_allow_html=True)
     st.subheader("Key Visual Summaries")
     visuals = {
         "Prediction Work Flow": "figures/empowerher_risk_pipeline_clean.png",
