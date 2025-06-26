@@ -188,11 +188,29 @@ When you hear things like"overall accuracy", “precision” or “70% recall,�
     new_cases, deaths, incidence = "317,000", "42,680", "130.8 per 100,000"
     st.metric("Estimated New invasive cases (2025)", new_cases)
     st.metric("Estimated Breast cancer deaths (2025)", deaths)
-    st.write(f"**Age-adjusted incidence rate:** {incidence}")
+    st.markdown(
+    """
+    <style>
+      .incidence-rate {
+        font-size: 2.5rem;      /* ← bump this up or down */
+        font-weight: 600;
+        margin-top: 1rem;
+        color: #FFFFFF;         /* optional: change text color */
+      }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+# — Render incidence with your custom class —
+st.markdown(
+    f"<p class='incidence-rate'>Age-adjusted incidence rate: {incidence}</p>",
+    unsafe_allow_html=True
+)
     st.subheader("Key Visual Summaries")
     visuals = {
-        "Prediction Flow": "figures/empowerher_risk_pipeline_clean.png",
-        "Feature Importances": "figures/confusion_matrix.png",
+        "Prediction Work Flow": "figures/empowerher_risk_pipeline_clean.png",
+        "Confusion Matrix chart": "figures/confusion_matrix.png",
         "Precision–Recall Curve": "figures/pr_curve.png",
         "Calibration Curve": "figures/calibration_curve.png"
     }
