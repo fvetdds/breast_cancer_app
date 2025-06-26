@@ -1,3 +1,4 @@
+
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -122,13 +123,62 @@ threshold = joblib.load(BASE_DIR / "models" / "threshold.pkl")
 with tab1:
     
     st.info("Research & Education use only: This tool is not a medical diagnosis.")
-    st.markdown("""*** About EmpowerHER***
-EmpowerHER is a Streamlit web app that uses an XGBoost model trained on the Brest Cancer Surveillance Consortium **BCSC** cohort https://www.bcsc-research.org/index.php/datasets/rf/ to deliver personalized breast cancer risk predictions—combining your demographic and clinical inputs into an easy-to-understand probability score and actionable guidance.Predictions may be less reliable for populations under-represented e.g. certain ethnic groups.
-    st.
-***How we evaluate model performance
+    st.markdown(
+    """
+    <div style="text-align:center; margin: 20px 0;">
+      <h1 style="
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 0;
+        color: #2A9D8F; /* your EmpowerHER accent */
+        font-family: 'Montserrat', sans-serif;
+        border-radius: 8px;
+        background: rgba(42, 157, 143, 0.1);
+      ">
+        ✨ About EmpowerHER ✨
+      </h1>
+    </div>
+    <hr style="
+      border: none;
+      height: 1px;
+      background: #ddd;
+      margin-bottom: 30px;
+      width: 40%;
+    ">
+    """,
+    unsafe_allow_html=True
+)
+    st.markdown("""
+EmpowerHER is a Streamlit web app that uses an XGBoost model trained on the Breast Cancer Surveillance Consortium **BCSC** cohort https://www.bcsc-research.org/index.php/datasets/rf/ to deliver personalized breast cancer risk predictions—combining your demographic and clinical inputs into an easy-to-understand probability score and actionable guidance. Predictions may be less reliable for populations under-represented e.g. certain ethnic groups.""")
+    st.markdown(
+    """
+    <div style="text-align:center; margin: 20px 0;">
+      <h1 style="
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 0;
+        color: #2A9D8F; /* your EmpowerHER accent */
+        font-family: 'Montserrat', sans-serif;
+        border-radius: 8px;
+        background: rgba(42, 157, 143, 0.1);
+      ">
+        How we evaluate model performance
+      </h1>
+    </div>
+    <hr style="
+      border: none;
+      height: 1px;
+      background: #ddd;
+      margin-bottom: 30px;
+      width: 40%;
+    ">
+    """,
+    unsafe_allow_html=True
+)
+    st.markdown("""
 When you hear things like"overall accuracy", “precision” or “70% recall,” it can feel like jargon. Here’s what those numbers really mean and why we chose them, what they tell us about the model, and why they matter for you.
 - **Overall accuracy**:the overall accuracy is 0.879 (about 88 %), meaning 88 out of every 100 predictions, cancer or not, were correct. 
-- **Precision**: Of all cases the model flagged as cancer case, the percentage that actually developed cancer. A 59% precision means 59 out of every 100 flagged cases were true positives.
+- **Precision**: Of all cases which the model flagged as cancer case, the percentage that actually developed cancer. A 59% precision means 59 out of every 100 flagged cases were true positives.
 - **Recall (Sensitivity)**: Of all true cancer cases, the percentage the model correctly identified. A 52% recall means the model detected 52 out of every 100 real cases.
 - **Brier Score**: The average squared difference between predicted probabilities and actual outcomes. Lower scores (closer to 0) indicate that probability estimates are more accurate.
 
