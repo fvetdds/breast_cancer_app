@@ -194,9 +194,7 @@ When you hear things like"overall accuracy", “precision” or “70% recall,�
     st.metric("Age-adjusted incidence rate (females) (2025)", incidence)
 
 from PIL import Image
-
     st.subheader("Key Visual Summaries")
-
     visuals = {
      "Prediction Work Flow":      "figures/empowerher_risk_pipeline_clean.png",
      "Confusion Matrix chart":    "figures/confusion_matrix.png",
