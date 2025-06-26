@@ -6,6 +6,7 @@ import sys
 import types
 from pathlib import Path
 import base64
+from PIL import Image
 #define weighted_logloss
 
 def weighted_logloss(y_true: np.ndarray, y_pred: np.ndarray):
