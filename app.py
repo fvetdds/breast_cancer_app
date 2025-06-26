@@ -150,7 +150,7 @@ with tab1:
         font-family: 'Montserrat', sans-serif;
         font-size: 1.5rem;
         border-radius: 6px;
-        background: linear-gradient(135deg, #9F6EF4, #F38EB5);
+        background: linear-gradient(135deg, #B292E5, #F4A8D4);
       ">
         ✨ About EmpowerHER ✨
       </h1>
@@ -171,7 +171,7 @@ EmpowerHER is a Streamlit web app that uses an XGBoost model trained on the Brea
         font-family: 'Montserrat', sans-serif;
         font-size: 1.5rem;
         border-radius: 5px;
-        background: linear-gradient(135deg, #9F6EF4, #F38EB5);
+        background: linear-gradient(135deg, #B292E5, #F4A8D4);
       ">
         How we evaluate model performance
       </h1>
@@ -188,10 +188,10 @@ When you hear things like"overall accuracy", “precision” or “70% recall,�
 """)
     st.header("Current US Breast Cancer Statistics in 2025 from American Cancer Society")
     
-    new_cases, deaths, incidence = "317,000", "42,680", "130.8 per 100,000"
+    new_cases, deaths, incidence = "317,000", "42,680", "130.8 new cases per 100,000 women"
     st.metric("Estimated New invasive cases (2025)", new_cases)
     st.metric("Estimated Breast cancer deaths (2025)", deaths)
-    st.metric("Breast Cancer Incidence (2025)", incidence)
+    st.metric("Age-adjusted incidence rate (females) (2025)", incidence)
     st.subheader("Key Visual Summaries")
     visuals = {
         "Prediction Work Flow": "figures/empowerher_risk_pipeline_clean.png",
