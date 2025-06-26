@@ -198,11 +198,11 @@ from PIL import Image
     st.subheader("Key Visual Summaries")
 
     visuals = {
-    "Prediction Work Flow":      "figures/empowerher_risk_pipeline_clean.png",
-    "Confusion Matrix chart":    "figures/confusion_matrix.png",
-    "Precision–Recall Curve":    "figures/pr_curve.png",
-    "Calibration Curve":         "figures/calibration_curve.png"
-}
+     "Prediction Work Flow":      "figures/empowerher_risk_pipeline_clean.png",
+     "Confusion Matrix chart":    "figures/confusion_matrix.png",
+     "Precision–Recall Curve":    "figures/pr_curve.png",
+     "Calibration Curve":         "figures/calibration_curve.png"
+    }
 
 
     items = list(visuals.items())
@@ -214,11 +214,11 @@ from PIL import Image
 
 
     for caption, rel in items[1:]:
-    try:
-        img = Image.open(BASE_DIR / rel)
-        st.image(img, caption=caption, width=500)
-    except FileNotFoundError:
-        st.error(f"Unable to load image: {BASE_DIR / rel}")
+        try:
+            img = Image.open(BASE_DIR / rel)
+            st.image(img, caption=caption, width=500)
+        except FileNotFoundError:
+            st.error(f"Unable to load image: {BASE_DIR / rel}")
 
 # Tab 2: Risk Insights 
 with tab2:
@@ -255,7 +255,7 @@ with tab2:
     expected = model.get_booster().feature_names
     df_new   = raw_df.reindex(columns=expected, fill_value=0).astype(np.float32)
     prob = model.predict_proba(df_new)[0,1]
-    st.markdown(f"<h3>Estimated Probability of Breast Cancer: {prob:.1%};</h3>", unsafe_allow_html=True)
+    st.markdown(f"<h3>Estimated Probability of Breast Cancer: {prob:.1%}</h3>", unsafe_allow_html=True)
         
 #Tab 3: Mind & Move ─────────────────────────────────────────────────────
 with tab3:
