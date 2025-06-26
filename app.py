@@ -255,7 +255,7 @@ with tab2:
     expected = model.get_booster().feature_names
     df_new   = raw_df.reindex(columns=expected, fill_value=0).astype(np.float32)
     prob = model.predict_proba(df_new)[0,1]
-    st.markdown(f"<h3>Estimated Probability of Breast Cancer: {prob:.1%}; font-size:1.8rem;</h3>", unsafe_allow_html=True)
+    st.markdown(f"<h3>Estimated Probability of Breast Cancer: {prob:.1%};</h3>", unsafe_allow_html=True)
         
 #Tab 3: Mind & Move ─────────────────────────────────────────────────────
 with tab3:
