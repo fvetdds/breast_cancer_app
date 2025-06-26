@@ -195,9 +195,9 @@ When you hear things like"overall accuracy", “precision” or “70% recall,�
 
 from PIL import Image
 
-st.subheader("Key Visual Summaries")
+    st.subheader("Key Visual Summaries")
 
-visuals = {
+    visuals = {
     "Prediction Work Flow":      "figures/empowerher_risk_pipeline_clean.png",
     "Confusion Matrix chart":    "figures/confusion_matrix.png",
     "Precision–Recall Curve":    "figures/pr_curve.png",
@@ -205,15 +205,15 @@ visuals = {
 }
 
 
-items = list(visuals.items())
+    items = list(visuals.items())
 
 
-first_caption, first_rel = items[0]
-first_img = Image.open(BASE_DIR / first_rel)
-st.image(first_img, caption=first_caption, width=700)
+    first_caption, first_rel = items[0]
+    first_img = Image.open(BASE_DIR / first_rel)
+    st.image(first_img, caption=first_caption, width=700)
 
 
-for caption, rel in items[1:]:
+    for caption, rel in items[1:]:
     try:
         img = Image.open(BASE_DIR / rel)
         st.image(img, caption=caption, width=500)
