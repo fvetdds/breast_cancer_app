@@ -183,10 +183,10 @@ When you hear things like"overall accuracy", “precision” or “70% recall,�
 - **Overall accuracy**:the overall accuracy is 0.879 (about 88 %), meaning 88 out of every 100 predictions, cancer or not, were correct. 
 - **Precision**: Of all cases which the model flagged as cancer case, the percentage that actually developed cancer. A 59% precision means 59 out of every 100 flagged cases were true positives.
 - **Recall (Sensitivity)**: Of all true cancer cases, the percentage the model correctly identified. A 70% recall means the model detected 70 out of every 100 real cases.
-- **Brier Score**: The average squared difference between predicted probabilities and actual outcomes. Lower scores (closer to 0) indicate that probability estimates are more accurate.
+- **Brier Score**: The average squared difference between predicted probabilities and actual outcomes. Lower scores (closer to 0) indicate that probability estimates are more accurate. The model has Brier score = 0.1012.
 
 """)
-    st.header("Current US Breast Cancer Statistics in 2025 from American Cancer Society")
+    st.subheader("Current US Breast Cancer Statistics in 2025 from American Cancer Society")
     
     new_cases, deaths, incidence = "317,000", "42,680", "130.8 new cases per 100,000 women"
     st.metric("Estimated New invasive cases (2025)", new_cases)
@@ -210,7 +210,7 @@ When you hear things like"overall accuracy", “precision” or “70% recall,�
 
 # Tab 2: Risk Insights 
 with tab2:
-    st.markdown("<h2>Breast Cancer Risk Prediction</h2>", unsafe_allow_html=True)
+    st.subheader("Breast Cancer Risk Prediction")
     st.info("**Research & Education Use Only:** Not for medical diagnosis.")
     with st.expander("Enter information", expanded=True):
         def sel(label, opts):
@@ -243,7 +243,7 @@ with tab2:
     expected = model.get_booster().feature_names
     df_new   = raw_df.reindex(columns=expected, fill_value=0).astype(np.float32)
     prob = model.predict_proba(df_new)[0,1]
-    st.markdown(f"<h3>Estimated Probability of Breast Cancer: {prob:.1%}</h3>", unsafe_allow_html=True)
+    st.markdown(f"<h3>Estimated Probability of Breast Cancer: {prob:.1%}; font-size:1.8rem;</h3>", unsafe_allow_html=True)
         
 #Tab 3: Mind & Move ─────────────────────────────────────────────────────
 with tab3:
