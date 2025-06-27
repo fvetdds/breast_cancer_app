@@ -333,14 +333,18 @@ with tab3:
         col.caption(f"**{title}**")
 
 
-    st.markdown("## 🤝 Local Support Groups")
+    st.markdown("## You are not alone, 🤝 Local Support Groups")
     support = [
-      {"Name": "American Cancer Society Middle Tennessee",            "Phone": "(800) 227-2345 (toll free)", "Website": "https://www.cancer.org/about-us/local/tennessee.html"},
-     {"Name": "Tennessee Breast Cancer Coalition",            "Phone": "(615) 377-8777", "Website": "https://www.tbcc.org/"},
+    {"Name": "American Cancer Society Middle Tennessee",            "Phone": "(615) 342-0840", "Website": "https://www.cancer.org/support-programs-and-services/patient-lodging/hope-lodge/nashville.html?utm_source=chatgpt.com"},
+    {"Name": "Tennessee Breast Cancer Coalition",            "Phone": "(615) 377-8777", "Website": "https://www.tbcc.org/"},
     {"Name": "Susan G. Komen Nashville",            "Phone": "(615) 673-6633", "Website": "https://komen.org/nashville"},
     {"Name": "Vanderbilt Breast Cancer Support Group","Phone": "(615) 322-3900", "Website": "https://www.vanderbilthealth.com/service-line/breast-center"},
     {"Name": "Alive Hospice Cancer Support",        "Phone": "(615) 327-1085", "Website": "https://alivehospice.org"},
-    {"Name": "YMCA of Middle Tennessee – LIVESTRONG® at the Y", "Website": "https://www.ymcamidtn.org/programs/health-and-fitness/support-groups/after-breast-cancer"}
+    {"Name": "YMCA of Middle Tennessee – LIVESTRONG® at the Y", "Website": "https://www.ymcamidtn.org/programs/health-and-fitness/support-groups/after-breast-cancer"},
+    {"Name": "Gilda's club Middle Tennessee", "Phone": "(615) 329‑1124", "Website": "https://gildasclubmiddletn.org/"},
+    {"Name": "TriStar Health", "Phone": "(800) 242-5665", "Website": "https://www.tristarhealth.com/specialties/oncology/cancer-support?"},
+    {"Name": "Tennessee Breast Cancer Coalition", "Phone": "(615) 377- 8777", "Website": "https://www.tbcc.org/resources?"},   
+    {"Name": "BRA", "Phone": "(615) 472-9478", "Website": "https://www.bragroups.org/about-us"},    
 ]
     support_df = pd.DataFrame(support)
     support_df["Website"] = support_df["Website"].apply(lambda url: f"[Visit]({url})")
