@@ -200,11 +200,8 @@ When you hear things like"overall accuracy", “precision” or “70% recall,�
     # Key visuals
     st.subheader("Key Visual Summaries")
     visuals = {
-        "Prediction Work Flow":      "figures/empowerher_risk_pipeline_clean.png",
-        "Confusion Matrix chart":    "figures/confusion_matrix.png",
-        "Precision–Recall Curve":    "figures/pr_curve.png",
-        "Calibration Curve":         "figures/calibration_curve.png"
-    }
+        "Prediction Work Flow":      "figures/EmpowerHER-flow-chart.png",
+        }
 
     # Display images
     for caption, rel_path in visuals.items():
