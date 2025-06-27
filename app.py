@@ -129,7 +129,7 @@ st.markdown(
 )
 
 # Main tabs
-tab1, tab2, tab3 = st.tabs(["About EmpowerHER", "Breast Cancer Risk Prediction", "Mind & Move"])
+tab1, tab2, tab3, tab4 = st.tabs(["About EmpowerHER", "Breast Cancer Risk Prediction", "Mind & Move", "Local support groups"])
 
 # Load pre-trained model and threshold
 BASE_DIR = Path(__file__).resolve().parent
@@ -253,7 +253,7 @@ with tab2:
     prob = model.predict_proba(df_new)[0,1]
     st.markdown(f"<h3>Estimated Probability of Breast Cancer: {prob:.1%}</h3>", unsafe_allow_html=True)
         
-#Tab 3: Mind & Move ─────────────────────────────────────────────────────
+#Tab 3: Mind & Move 
 with tab3:
     st.header("Glow and Grow")
     st.write(
@@ -331,8 +331,8 @@ with tab3:
     for col, (title, url) in zip(cols, videos.items()):
         col.video(url)
         col.caption(f"**{title}**")
-
-
+#support groups
+with tab 4:
     st.markdown("## You are not alone, 🤝 Local Support Groups")
     support = [
     {"Name": "American Cancer Society Middle Tennessee",            "Phone": "(615) 342-0840", "Website": "https://www.cancer.org/support-programs-and-services/patient-lodging/hope-lodge/nashville.html?utm_source=chatgpt.com"},
