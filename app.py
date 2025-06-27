@@ -330,7 +330,7 @@ with tab3:
         col.caption(f"**{title}**")
 #support groups
 with tab4:
-    st.markdown("## You are not alone, 👩🏻‍🤝‍👩🏽Local Support Groups")
+    st.markdown("#You are not alone, check out🫂Local Support Groups")
     support = [
     {"Name": "American Cancer Society Middle Tennessee",            "Phone": "(615) 342-0840", "Website": "https://www.cancer.org/support-programs-and-services/patient-lodging/hope-lodge/nashville.html?utm_source=chatgpt.com"},
     {"Name": "Tennessee Breast Cancer Coalition",            "Phone": "(615) 377-8777", "Website": "https://www.tbcc.org/"},
