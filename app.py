@@ -344,7 +344,9 @@ with tab3:
     {"Name": "Gilda's club Middle Tennessee", "Phone": "(615) 329‑1124", "Website": "https://gildasclubmiddletn.org/"},
     {"Name": "TriStar Health", "Phone": "(800) 242-5665", "Website": "https://www.tristarhealth.com/specialties/oncology/cancer-support?"},
     {"Name": "Tennessee Breast Cancer Coalition", "Phone": "(615) 377- 8777", "Website": "https://www.tbcc.org/resources?"},   
-    {"Name": "BRA", "Phone": "(615) 472-9478", "Website": "https://www.bragroups.org/about-us"},    
+    {"Name": "Breast cancer Recovery in Action", "Phone": "(615) 472-9478", "Website": "https://www.bragroups.org/about-us"}, 
+    {"Name": "Nashville General Hospital Foundation", "Phone": "(615) 341-4431 ", "Website": "https://www.nashgenfoundation.org/funds?"}, 
+    {"Name": "Ascension", "Phone": "(615) 284-2273", "Website": "https://healthcare.ascension.org/specialty-care/cancer/why-ascension/tnnas-nashville-tn-cancer-wellness-survivorship?"}  
 ]
     support_df = pd.DataFrame(support)
     support_df["Website"] = support_df["Website"].apply(lambda url: f"[Visit]({url})")
