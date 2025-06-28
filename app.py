@@ -181,7 +181,7 @@ EmpowerHER is a Streamlit web app that uses an XGBoost model trained on the Brea
 )
     st.markdown("""
 When you hear things like"overall accuracy", “precision” or “70% recall,” it can feel like jargon. Here’s what those numbers really mean and why we chose them, what they tell us about the model, and why they matter for you.
-- **Overall accuracy: The model’s overall accuracy is 77.6%, meaning it makes the correct prediction in about 8 out of every 10 cases. 
+- **Overall accuracy**: The model’s overall accuracy is 77.6%, meaning it makes the correct prediction in about 8 out of every 10 cases. 
 - **Precision**: Of all cases which the model flagged as cancer case, the percentage that actually developed cancer. A 0.4 precision means 4 out of every 10 flagged cases were true positives.
 - **Recall (Sensitivity)**: Of all true cancer cases, the percentage the model correctly identified. A 0.916 recall means the model detected 9 out of every 10 real cases.
 - **Brier Score**: The average squared difference between predicted probabilities and actual outcomes. Lower scores (closer to 0) indicate that probability estimates are more accurate. The model has Brier score = 0.1012.
