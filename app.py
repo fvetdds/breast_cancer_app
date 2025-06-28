@@ -129,7 +129,7 @@ st.markdown(
 )
 
 # Main tabs
-tab1, tab2, tab3, tab4 = st.tabs(["About EmpowerHER", "Breast Cancer Risk Prediction", "Mind & Move", "Local support groups"])
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["About EmpowerHER", "Breast Cancer Risk Prediction", "Mind & Move", "Local support groups", "Contact Us"])
 
 # Load pre-trained model and threshold
 BASE_DIR = Path(__file__).resolve().parent
@@ -347,3 +347,11 @@ with tab4:
     support_df = pd.DataFrame(support)
     support_df["Website"] = support_df["Website"].apply(lambda url: f"[Visit]({url})")
     st.table(support_df)
+#Contact us tab
+with tab5:
+st.sidebar.header("About Me")
+st.sidebar.markdown("""
+Hi there—I’m Dollada Srisai. My journey from neuroscientist to data scientist has been guided not just by numbers, but by the resilience I witnessed living alongside cancer survivors. Those firsthand experiences taught me that behind every data point is a story of courage and hope. With a PhD in Neuroscience, veterinary medicine training, and hands-on expertise in machine learning and clinical research, I’m dedicated to turning complex insights into compassionate support—helping people truly understand, navigate, and thrive through their cancer journeys.
+📬 ddsrisai@gmail.com | 🔗 https://www.linkedin.com/in/dollada-srisai/ | 🐙 https://github.com/fvetdds 
+
+""")
