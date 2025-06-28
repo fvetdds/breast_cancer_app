@@ -7,6 +7,7 @@ import types
 from pathlib import Path
 import base64
 from PIL import Image
+
 #define weighted_logloss
 
 def weighted_logloss(y_true: np.ndarray, y_pred: np.ndarray):
@@ -24,21 +25,19 @@ st.set_page_config(page_title="EmpowerHER: Know Your Risks. Lead Your Life. ", l
 st.markdown(
     '''
     <style>
-    /* Container adapts to screen width */
-    .block-container {
+     .block-container {
       width: 100%;
       max-width: 900px;
       margin: auto;
       padding: 1rem;
     }
-    /* Full width on small screens */
+   
     @media (max-width: 600px) {
       .block-container {
         width: 100%;
         padding: 0.75rem;
       }
     }
-    /* Slightly narrower on medium screens */
     @media (max-width: 1024px) and (min-width: 601px) {
       .block-container {
         width: 90%;
@@ -57,7 +56,7 @@ def img_to_base64(img_path):
 
 icon_base64 = img_to_base64("figures/title_icon2.png")
 
-# Custom styling: fonts, colors, buttons, cards
+# Header design
 st.markdown(f"""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+Pro:wght@400;600&display=swap');
@@ -113,10 +112,7 @@ st.markdown(f"""
 st.markdown(
     """
     <style>
-      /* --------------------------------------------------
-         Incidence-rate: bump up size & use accent color
-         -------------------------------------------------- */
-      .incidence-rate {
+        .incidence-rate {
         font-size: 2.5rem;          
         font-weight: 600;
         margin: 1rem 0;
@@ -136,7 +132,7 @@ BASE_DIR = Path(__file__).resolve().parent
 model = joblib.load(BASE_DIR / "models" / "bcsc_xgb_model.pkl")
 threshold = joblib.load(BASE_DIR / "models" / "threshold.pkl")
 
-# Tab 1: About 
+# Tab 1: About EmpowerHER application
 with tab1:
     
     st.info("Research & Education use only: This tool is not a medical diagnosis.")
@@ -187,7 +183,7 @@ When you hear things like"overall accuracy", “precision” or “70% recall,�
 - **Brier Score**: The average squared difference between predicted probabilities and actual outcomes. Lower scores (closer to 0) indicate that probability estimates are more accurate. The model has Brier score = 0.1012.
 
 """)
-# US statistics
+# USA breast cancer statistics 2025
     st.subheader("Current US Breast Cancer Statistics in 2025 from American Cancer Society")
     new_cases = "317,000"
     deaths = "42,680"
@@ -197,13 +193,13 @@ When you hear things like"overall accuracy", “precision” or “70% recall,�
     st.metric("Estimated Breast cancer deaths (2025)", deaths)
     st.metric("Age-adjusted incidence rate (females) (2025)", incidence)
 
-    # Key visuals
+# work flowchart 
     st.subheader("Key Visual Summaries")
     visuals = {
         "Prediction Work Flow":      "figures/EmpowerHER-flow-chart.png",
         }
 
-    # Display images
+# Display images
     for caption, rel_path in visuals.items():
         img_path = BASE_DIR / rel_path
         try:
@@ -213,7 +209,7 @@ When you hear things like"overall accuracy", “precision” or “70% recall,�
         except FileNotFoundError:
             st.error(f"Unable to load image: {img_path}")
 
-# Tab 2: Risk Insights 
+# Tab 2: Risk fortor Insights 
 with tab2:
     st.subheader("Breast Cancer Risk Prediction")
     st.info("**Research & Education Use Only:** Not for medical diagnosis.")
@@ -232,7 +228,7 @@ with tab2:
         menopause   = {1:"Pre/peri",2:"Post",3:"Surgical"}
         bmi_group   = {1:"10–24.9",2:"25–29.9",3:"30–34.9",4:"35+"}
         inputs = {
-           "age_group":         sel("Age group", age_groups),
+            "age_group":         sel("Age group", age_groups),
             "race_eth":          sel("Race/Ethnicity", race_eth),
             "age_menarche":      sel("Age at 1st period", menarche),
             "age_first_birth":   sel("Age at first birth", birth_age),
@@ -349,8 +345,8 @@ with tab4:
     st.table(support_df)
 #Contact us tab
 with tab5:
-st.sidebar.header("About Me")
-st.sidebar.markdown("""
+    st.sidebar.header("About Me")
+    st.sidebar.markdown("""
 Hi there—I’m Dollada Srisai. My journey from neuroscientist to data scientist has been guided not just by numbers, but by the resilience I witnessed living alongside cancer survivors. Those firsthand experiences taught me that behind every data point is a story of courage and hope. With a PhD in Neuroscience, veterinary medicine training, and hands-on expertise in machine learning and clinical research, I’m dedicated to turning complex insights into compassionate support—helping people truly understand, navigate, and thrive through their cancer journeys.
 📬 ddsrisai@gmail.com | 🔗 https://www.linkedin.com/in/dollada-srisai/ | 🐙 https://github.com/fvetdds 
 
