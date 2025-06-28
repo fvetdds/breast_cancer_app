@@ -298,14 +298,13 @@ with tab3:
     else:
         mood = "🤩"
 
-    # Show as a metric: big number + emoji
+    
     st.metric(
         label="Overall Wellness Progress",
         value=f"{overall*100:.0f}%",
         delta=mood
     )
 
-    # Save button
     if st.button("Save Entry"):
         entry = {
             "Meditation (min)": med,
