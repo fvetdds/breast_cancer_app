@@ -39,4 +39,4 @@ To use the application, click the link https://breastcancerapp-dollada.streamlit
 This project is released under the MIT License.
 
 Developed by Dollada Srisai
-Last updated: June 28, 2025
+Last updated: July 1st 2025
